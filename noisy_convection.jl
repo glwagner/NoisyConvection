@@ -8,19 +8,21 @@ using Statistics
 J̄ = 1e-6
 N² = 1e-6
 
-Nx = 64
-Ny = 64
+arch = CPU()
+Nx = 96
+Ny = 96
 Nz = 64
 
-Lx = 512
-Ly = 512
-Lz = 128
+Lx = 256
+Ly = 256
+Lz = 64
 
 source = :constant
 #source = :noise
 #source = :delta
 
-grid = RectilinearGrid(size = (Nx, Ny, Nz),
+grid = RectilinearGrid(arch,
+                       size = (Nx, Ny, Nz),
                        x = (0, Lx),
                        y = (0, Ly),
                        z = (0, Lz),
